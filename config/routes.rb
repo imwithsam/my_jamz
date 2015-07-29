@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :songs, :users
+  resources :users do
+    resources :songs
+  end
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

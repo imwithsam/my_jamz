@@ -25,7 +25,7 @@ class SongsController < ApplicationController
       flash[:error] = "Song could not be added."
     end
 
-    redirect_to songs_path
+    redirect_to user_songs_path(song_params[:user_id])
   end
 
   # This is required in Rails 4 as a security measure
@@ -40,7 +40,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.delete
-    redirect_to songs_path
+    redirect_to user_songs_path(song_params[:user_id])
   end
 
   private
@@ -50,6 +50,6 @@ class SongsController < ApplicationController
   end
   
   def song_params
-    params.require(:song).permit(:title, :artist)
+    params.require(:song).permit(:title, :artist, :user_id)
   end
 end

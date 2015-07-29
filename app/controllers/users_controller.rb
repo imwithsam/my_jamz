@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if user.save
       flash[:notice] = "Welcome to MyJamz, #{user.username}!"
-      redirect_to new_song_path
+      redirect_to new_user_song_path(user_id: user.id)
     else
       flash[:error] = "Unable to create this account."
       render :new # Render is fater than redirect_to

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:notice] = "You are now logged in, #{user.username}."
-      redirect_to songs_path
+      redirect_to user_songs_path(user_id: user.id)
     else
       flash[:error] = "We were unable to log you in."
       render :new # Render is fater than redirect_to

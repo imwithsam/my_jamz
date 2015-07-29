@@ -19,10 +19,10 @@
         <td><%= song.id %></td>
         <td><%= link_to song.title, song %></td>
         <td><%= song.artist %>
-        <td><%= link_to "edit", edit_song_path(song) %></td>
-        <td><%= link_to "delete", song_path(song), method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "edit", edit_user_song_path(song) %></td>
+        <td><%= link_to "delete", user_song_path(song), method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<p><%= link_to "New Song", new_song_path %></p>
+<p><%= link_to "New Song", new_user_song_path %></p>
