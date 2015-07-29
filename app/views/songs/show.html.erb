@@ -1,0 +1,19 @@
+<h1>Ultimate Jamz</h1>
+<table>
+  <caption>Song</caption>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Artist</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @song.id %></td>
+        <td><%= @song.title %></td>
+        <td><%= @song.artist %></td>
+      </tr>
+  </tbody>
+</table>
+<p><%= link_to "All Songs", songs_path %></p>
